@@ -1,18 +1,17 @@
 package com.brainyful.kotlinworkshop
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
 
 
-    var array = arrayOf("Martini", "Gin and Tonic", "Cosmopolitan", "Mohito", "Margherita", "Manhattan")
+    var array = arrayOf("Martini", "Gin and Tonic", "Cosmopolitan", "Mohito", "Margherita", "Manhattan", "Appletini")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
