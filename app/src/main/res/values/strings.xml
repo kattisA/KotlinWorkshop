@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinWorkshop</string>
+    <string name="placeholder_recipe">En drink</string>
 </resources>
