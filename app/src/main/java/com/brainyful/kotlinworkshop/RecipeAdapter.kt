@@ -1,10 +1,12 @@
 package com.brainyful.kotlinworkshop
 
 import android.content.Context
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 
 class RecipeAdapter (val context: Context,
@@ -13,6 +15,7 @@ class RecipeAdapter (val context: Context,
 {
     val titleText: TextView = view.findViewById(R.id.recipe_title)
     val subtitleText: TextView = view.findViewById(R.id.recipe_subtitle)
+    val image: ImageView = view.findViewById(R.id.Imageview)
 }
 
     override fun getItemCount(): Int
@@ -25,6 +28,8 @@ class RecipeAdapter (val context: Context,
         val recipeViewHolder = viewHolder as RecipeViewHolder
         recipeViewHolder.titleText.text = recipe.name
         recipeViewHolder.subtitleText.text = recipe.description
+        recipeViewHolder.image.setImageResource(recipe.icon)
+        recipeViewHolder.image.setBackgroundColor(Color.parseColor(recipe.background))
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
     {

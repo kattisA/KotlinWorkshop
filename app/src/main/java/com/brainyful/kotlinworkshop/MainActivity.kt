@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val adapter = RecipeAdapter(this,
-            getRecipes())
+            getRecipes(this))
 
         val recyclerView: RecyclerView = this.findViewById(R.id.drink_list)
         recyclerView.layoutManager = LinearLayoutManager(this)
