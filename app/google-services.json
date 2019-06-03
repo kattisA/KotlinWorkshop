@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "970584594848",
+    "firebase_url": "https://drinkrecipes-a4ad3.firebaseio.com",
+    "project_id": "drinkrecipes-a4ad3",
+    "storage_bucket": "drinkrecipes-a4ad3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970584594848:android:5a8f3975dbd6fcda",
+        "android_client_info": {
+          "package_name": "com.brainyful.kotlinworkshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970584594848-6vqh8jg8o9esa0tj8o2kshfj472ku23p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuZC01bcBBsQvUgeTEd6nI-DX-ccaMYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970584594848-6vqh8jg8o9esa0tj8o2kshfj472ku23p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
