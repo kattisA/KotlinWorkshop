@@ -10,13 +10,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
 
-
+    private val myList: MutableList<Recipe> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val adapter = RecipeAdapter(this,
-            getRecipes(this))
+            myList)
 
         val recyclerView: RecyclerView = this.findViewById(R.id.drink_list)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -27,8 +27,10 @@ class MainActivity : AppCompatActivity() {
         db.collection("drinks")
             .get()
             .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(javaClass.name, "${document.id} => ${document.data}")
+                for (documentSnapshot in result) {
+                    val recipe = documentSnapshot.toObject(Recipe::class.java)
+                    myList.add(recipe)
+                    Log.d(javaClass.name, "${documentSnapshot.id} => ${documentSnapshot.data}")
                 }
             }
             .addOnFailureListener { exception ->

@@ -1,6 +1,5 @@
 package com.brainyful.kotlinworkshop
 
-import android.graphics.drawable.Drawable
 
 data class Recipe(
     var name: String,

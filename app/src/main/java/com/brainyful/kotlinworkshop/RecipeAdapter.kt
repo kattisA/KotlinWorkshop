@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class RecipeAdapter (val context: Context,
-                     val dataSource:Array<Recipe>): RecyclerView.Adapter<RecyclerView.ViewHolder>()
+                     val dataSource:MutableList<Recipe>): RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {    class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view)
 {
     val titleText: TextView = view.findViewById(R.id.recipe_title)
