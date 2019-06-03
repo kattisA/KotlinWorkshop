@@ -1,14 +1,11 @@
 package com.brainyful.kotlinworkshop
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.ListView
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +21,21 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = this.findViewById(R.id.drink_list)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
+
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("drinks")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(javaClass.name, "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(javaClass.name, "Error getting documents.", exception)
+            }
+
+
 
         /*recyclerView = object : AdapterView.OnItemClickListener {
 
